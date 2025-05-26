@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../core/utils/app_strings.dart';
-import '../../../../core/utils/text_styles.dart';
-import '../../../../core/widgets/custom_elevated_button.dart';
+import '../../../../../core/utils/app_strings.dart';
+import '../../../../../core/utils/text_styles.dart';
+import '../../../../../core/widgets/custom_elevated_button.dart';
 
 class CustomBodySplash extends StatelessWidget {
   const CustomBodySplash({super.key});

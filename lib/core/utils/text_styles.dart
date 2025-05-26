@@ -12,4 +12,15 @@ abstract class CustomTextStyles
     fontSize: 16,
     fontWeight: FontWeight.bold,
   );
+  static final  font20BoldColorWhite = TextStyle(
+    color: Colors.black,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
+  static final  font14BoldColorWhite = TextStyle(
+    color: Colors.black,
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+
+  );
 }

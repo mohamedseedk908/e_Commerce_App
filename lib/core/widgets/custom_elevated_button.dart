@@ -3,10 +3,11 @@ import 'package:e_commerce_app/core/utils/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({super.key, this.height, this.width, this.name});
+  const CustomElevatedButton({super.key, this.height, this.width, this.name, this.onPressed});
   final double? height;
   final double? width;
   final String? name;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CustomElevatedButton extends StatelessWidget {
       height: height ?? 53,
       width: width ?? 193,
       child: ElevatedButton(
-        onPressed: () {
+        onPressed: onPressed ?? () {
           // انتقل للشاشة التالية مثلاً
         },
         style: ElevatedButton.styleFrom(
