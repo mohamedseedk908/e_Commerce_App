@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/text_styles.dart';
 import '../../../data/models/on_boarding_models.dart';
 
 class CustomBody extends StatelessWidget {
-  const CustomBody({super.key, this.controller});
+  const CustomBody({super.key, this.controller, this.onPageChanged});
   final controller;
+  final  Function(int)? onPageChanged;
 
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
+      onPageChanged: onPageChanged,
       controller: controller,
       itemCount: onBoardingData.length,
       itemBuilder: (context, index) {

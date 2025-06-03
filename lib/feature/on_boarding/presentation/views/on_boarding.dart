@@ -1,8 +1,8 @@
 import 'package:e_commerce_app/feature/on_boarding/presentation/views/widgets/custom_body.dart';
 import 'package:e_commerce_app/feature/on_boarding/presentation/views/widgets/custom_container.dart';
 import 'package:e_commerce_app/feature/on_boarding/presentation/views/widgets/custom_smooth_page_indicator.dart';
+import 'package:e_commerce_app/feature/on_boarding/presentation/views/widgets/get_button.dart';
 import 'package:flutter/material.dart';
-import '../../../../core/widgets/custom_elevated_button.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -13,6 +13,7 @@ class OnBoarding extends StatefulWidget {
 
 class _OnBoardingState extends State<OnBoarding> {
   final PageController _controller = PageController(initialPage: 0);
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +21,20 @@ class _OnBoardingState extends State<OnBoarding> {
       body: Stack(
         children: [
           CustomContainer(),
-          CustomBody(controller: _controller),
+          CustomBody(
+            controller: _controller,
+            onPageChanged: (index) {
+              setState(() {
+                currentIndex = index;
+              });
+            },
+          ),
           Column(
             children: [
               SizedBox(height: 600),
               CustomSmoothPageIndicator(controller: _controller),
               SizedBox(height: 30),
-              Center(child: CustomElevatedButton()),
+              GetButton(controller: _controller, currentIndex: currentIndex),
             ],
           ),
         ],
@@ -34,3 +42,4 @@ class _OnBoardingState extends State<OnBoarding> {
     );
   }
 }
+
